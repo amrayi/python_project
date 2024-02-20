@@ -1,0 +1,29 @@
+CREATE TABLE newterm (
+	"counter" INTEGER PRIMARY KEY,
+	"Fname"	TEXT NOT NULL,
+	"Lname"	TEXT NOT NULL,
+	"student_id"	INTEGER NOT NULL UNIQUE,
+	"age"	INTEGER,
+	"gender" VARCHAR(10) CHECK (gender IN('male','female')),
+	"field"	TEXT NOT NULL,
+	"grade"	INTEGER DEFAULT 0,
+	"avrage" REAL DECIMAL(4,2) NOT NULL,
+	"sessionsAttended" INTEGER DEFAULT 0
+);
+
+UPDATE newterm SET overal = ROUND('OVERAL',2);
+
+DELETE FROM class WHERE Fname= 'Ali';
+
+UPDATE class SET grade=17 WHERE Fname= 'Sara';
+UPDATE class SET grade=18 WHERE Fname= 'Ahmad';
+UPDATE class SET grade=15 WHERE Fname= 'Reza';
+
+SELECT counter,Fname,Lname,student_id,age,gender,field,grade
+FROM class WHERE grade > 16.5;
+
+INSERT INTO newterm (counter,Fname,Lname,student_id,age,gender,field,grade)
+SELECT counter,Fname,Lname,student_id,age,gender,field,avrage FROM class 
+WHERE (grade > 16.5)
+ORDER BY fname;
+
