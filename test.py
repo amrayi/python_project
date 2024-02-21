@@ -21,11 +21,3 @@ import uuid
 # result2 = re.findall(pattern2, phone)
 # if result2:
 #     print("Iransell")
-
-# img1 = face_recognition.load_image_df('./1/ih;ohn')
-# img1_encod = face_recognition.face_encoding(img1)
-
-# img2 = face_recognition.load_image_df('./2/khch')
-# img2_encod = face_recognition.face_encoding(img2)
-
-# img1.save('%s.jpg' %(uuid.uuid1()))
